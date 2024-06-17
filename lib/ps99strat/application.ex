@@ -11,8 +11,6 @@ defmodule Ps99strat.Application do
       Ps99stratWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:ps99strat, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Ps99strat.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: Ps99strat.Finch},
       # Start a worker by calling: Ps99strat.Worker.start_link(arg)
       # {Ps99strat.Worker, arg},
       # Start to serve requests, typically the last entry
