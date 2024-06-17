@@ -1,0 +1,25 @@
+<section>
+    <%= for %{"egg" => egg_info, "pets" => pets_info} <- @egg_data do %>
+        <div>
+            <p>
+                <%= "#{egg_info["name"]} | rap = #{egg_info["rap"]} | ev = #{egg_info["exp_val"]}" %>
+            </p>
+            <table class="border-separate border border-slate-400 table-auto border-spacing-2">
+                <tr class="border border-slate-400">
+                    <th class="border border-slate-400">Pet Name</th>
+                    <th class="border border-slate-400">RAP</th>
+                    <th class="border border-slate-400">Probability</th>
+                    <th class="border border-slate-400">Expected attempts</th>
+                </tr>
+                <%= for {pet_info, prob} <- pets_info do %>
+                    <tr class="border border-slate-400">
+                        <td class="border border-slate-400"><%= pet_info["name"] %></td>
+                        <td class="border border-slate-400"><%= pet_info["rap"] %></td>
+                        <td class="border border-slate-400"><%= "#{prob}%" %></td>
+                        <td class="border border-slate-400"><%= 100 / prob %></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+    <% end %>
+</section>

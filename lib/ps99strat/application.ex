@@ -14,6 +14,7 @@ defmodule Ps99strat.Application do
       # Start a worker by calling: Ps99strat.Worker.start_link(arg)
       # {Ps99strat.Worker, arg},
       # Start to serve requests, typically the last entry
+      Ps99strat.DataGrabber,
       Ps99stratWeb.Endpoint
     ]
 
