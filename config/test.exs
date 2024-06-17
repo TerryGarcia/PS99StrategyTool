@@ -7,12 +7,6 @@ config :ps99strat, Ps99stratWeb.Endpoint,
   secret_key_base: "TvefGW4yiGBTlVQ1gCJKXBkQHQQ9NIjRazgE98szYLqH0sii2ZA8RaZrX0JZG/he",
   server: false
 
-# In test we don't send emails.
-config :ps99strat, Ps99strat.Mailer, adapter: Swoosh.Adapters.Test
-
-# Disable swoosh api client as it is only required for production adapters.
-config :swoosh, :api_client, false
-
 # Print only warnings and errors during test
 config :logger, level: :warning
 
