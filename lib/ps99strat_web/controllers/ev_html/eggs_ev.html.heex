@@ -9,7 +9,7 @@
     <%= for %{"egg" => egg_info, "pets" => pets_info} <- @egg_data do %>
         <div class="pb-12">
             <.egg_ev egg_info={egg_info} />
-            <.pets_ev pets_info={pets_info} />
+            <.pets_ev egg_info={egg_info} pets_info={pets_info} />
         </div>
     <% end %>
 </section>
