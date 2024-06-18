@@ -1,0 +1,48 @@
+<table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+            <th scope="col" class="size-min px-6 py-3">
+                Icon
+            </th>
+            <th scope="col" class="size-min px-6 py-3">
+                Pet Name
+            </th>
+            <th scope="col" class="size-min px-6 py-3">
+                RAP
+            </th>
+            <th scope="col" class="size-min px-6 py-3">
+                Probability
+            </th>
+            <th scope="col" class="size-min px-6 py-3">
+                Expected Attempts
+            </th>
+            <th scope="col" class="size-min px-6 py-3">
+                Expected Cost
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= for {pet_info, prob} <- @pets_info do %>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <td scope="row" class="w-min h-10 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <img src={pet_info["icon"]} alt={pet_info["name"]}>
+                </td>
+                <td class="size-fit px-6 py-4">
+                    <%= pet_info["name"] %>
+                </td>
+                <td class="w-36 px-6 py-4">
+                    <%= Ps99strat.pretty_print pet_info["rap"] %> 💎
+                </td>
+                <td class="size-min px-6 py-4">
+                    <%= prob %>%
+                </td>
+                <td class="size-min px-6 py-4">
+                    <%= Ps99strat.pretty_print 100 / prob %>
+                </td>
+                <td class="w-36 px-6 py-4">
+                    <%= Ps99strat.pretty_print (100 / prob * pet_info["rap"]) %> 💎
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

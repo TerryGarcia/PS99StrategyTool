@@ -1,25 +1,25 @@
 <section>
-    <%= for %{"egg" => egg_info, "pets" => pets_info} <- @egg_data do %>
-        <div>
-            <p>
-                <%= "#{egg_info["name"]} | rap = #{egg_info["rap"]} | ev = #{egg_info["exp_val"]}" %>
-            </p>
-            <table class="border-separate border border-slate-400 table-auto border-spacing-2">
-                <tr class="border border-slate-400">
-                    <th class="border border-slate-400">Pet Name</th>
-                    <th class="border border-slate-400">RAP</th>
-                    <th class="border border-slate-400">Probability</th>
-                    <th class="border border-slate-400">Expected attempts</th>
-                </tr>
-                <%= for {pet_info, prob} <- pets_info do %>
-                    <tr class="border border-slate-400">
-                        <td class="border border-slate-400"><%= pet_info["name"] %></td>
-                        <td class="border border-slate-400"><%= pet_info["rap"] %></td>
-                        <td class="border border-slate-400"><%= "#{prob}%" %></td>
-                        <td class="border border-slate-400"><%= 100 / prob %></td>
-                    </tr>
-                <% end %>
-            </table>
+    <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-5xl dark:text-white">Expected Value</h1>
+    <h2 class="text-4xl font-extrabold dark:text-white">About</h2>
+    <p class="my-4 text-lg text-gray-500">
+        In probability, you can think of expected value as an average. As you take more and more samples from a random variable,
+        the average of your samples will tend towards the "expected value." For example, for a certain egg, a pet may have
+        an expected attempts of 7.69 which means as you hatch more and more eggs, the average number of eggs that it takes to
+        hatch the pet, will move closer to 7.69. The information in this section is useful because it can let you know
+        roughly how much it will cost to get a certain pet from an egg or how many diamonds you can get from many eggs after selling
+        the pets from them.
+    </p>
+
+    <h2 class="text-4xl font-extrabold dark:text-white">Areas</h2>
+    <p class="my-4 text-lg text-gray-500">The expected value information is seperated into seperate web pages.</p>
+    <p class="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">Click on one of the cards below to go to an area.</p>
+
+    <a href="/ev/eggs">
+        <div class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Eggs</h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Expected value information for eggs </p>
         </div>
-    <% end %>
+    </a>
 </section>
+
+

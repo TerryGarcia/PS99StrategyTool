@@ -30,7 +30,8 @@ defmodule Ps99strat.DataGrabber do
 
   defp get_data do
     Req.get!("https://ps99rap.com/api/get/items").body["data"]
-    |> Enum.map(&(%{&1["id"] => &1}))
+    |> Task.async_stream(&(%{&1["id"] => &1}))
+    |> Stream.map(fn {:ok, map} -> map end)
     |> Enum.reduce(&Map.merge/2)
   end
 end

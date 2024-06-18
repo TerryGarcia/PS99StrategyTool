@@ -11,7 +11,15 @@ defmodule Ps99strat.ExpectedValue do
       {"huge blazing shark",     1.25},
       {"huge blazing bat",       0.7},
       {"titanic blazing dragon", 0.05}
-    ]
+    ],
+    "exclusive egg 27" => [
+      {"stargazing wolf",          50},
+      {"stargazing bear",          35},
+      {"stargazing axolotl",            13},
+      {"huge stargazing wolf",     1.25},
+      {"huge stargazing axolotl",       0.7},
+      {"titanic stargazing bull", 0.05}
+    ],
   }
 
   defp expected_value(pet_data) do

@@ -1,0 +1,12 @@
+<div class="flex items-center gap-4">
+    <img class="w-10 h-10 rounded-full" src={@egg_info["icon"]} alt={@egg_info["name"]}>
+    <div class="font-medium dark:text-white">
+        <div><%= @egg_info["name"] %></div>
+        <div class="text-sm text-gray-500 dark:text-gray-400">
+            RAP: <%= Ps99strat.pretty_print @egg_info["rap"] %> 💎
+        </div>
+        <div class="text-sm text-gray-500 dark:text-gray-400">
+            Expected Value: <%= Ps99strat.pretty_print @egg_info["exp_val"] %> 💎
+        </div>
+    </div>
+</div>
