@@ -1,0 +1,15 @@
+<section>
+    <h2 class="text-4xl font-extrabold dark:text-white">Expected Value - Eggs</h2>
+    <p class="my-4 text-lg text-gray-500">RAP = current market value. Expected Attempts = how many times on average until pet is hatched.
+        Expected cost = average cost of buying eggs and hatching until pet is hatched.
+        Expected value = average number of diamonds obtained from hatching and selling the pet.
+        As you can see, the eggs in this game are pretty much a rip off.
+    </p>
+    <br>
+    <%= for %{"egg" => egg_info, "pets" => pets_info} <- @egg_data do %>
+        <div class="pb-12">
+            <.egg_ev egg_info={egg_info} />
+            <.pets_ev pets_info={pets_info} />
+        </div>
+    <% end %>
+</section>

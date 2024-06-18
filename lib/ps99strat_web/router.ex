@@ -18,6 +18,8 @@ defmodule Ps99stratWeb.Router do
     pipe_through :browser
 
     get "/", HomeController, :home
+    get "/ev", EvController, :ev
+    get "/ev/eggs", EvController, :eggs_ev
   end
 
   # Other scopes may use custom stacks.
