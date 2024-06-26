@@ -22,7 +22,7 @@ defmodule Ps99strat.ExpectedValue do
     ],
   }
 
-  defp expected_value(pet_data) do
+  def expected_value(pet_data) do
     pet_data
     |> Enum.map(fn {pet, prob} -> pet["rap"] * prob / 100 end)
     |> Enum.sum
