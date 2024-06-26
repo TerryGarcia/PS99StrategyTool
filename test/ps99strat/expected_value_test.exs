@@ -5,23 +5,24 @@ defmodule Ps99strat.ExpectedValueTest do
     pet_data = [
       {
         %{
-        "rap" => 1
+          "rap" => 1
         },
         100
       },
       {
         %{
-        "rap" => 1
+          "rap" => 1
         },
         100
       },
       {
         %{
-        "rap" => 1
+          "rap" => 1
         },
         100
       }
     ]
+
     assert Ps99strat.ExpectedValue.expected_value(pet_data) == 3
   end
 
@@ -29,24 +30,24 @@ defmodule Ps99strat.ExpectedValueTest do
     pet_data = [
       {
         %{
-        "rap" => 2890810238
+          "rap" => 2_890_810_238
         },
         0
       },
       {
         %{
-        "rap" => 0
+          "rap" => 0
         },
         0
       },
       {
         %{
-        "rap" => 123456
+          "rap" => 123_456
         },
         100
       }
     ]
-    assert Ps99strat.ExpectedValue.expected_value(pet_data) == 123456
-  end
 
+    assert Ps99strat.ExpectedValue.expected_value(pet_data) == 123_456
+  end
 end

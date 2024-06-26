@@ -12,7 +12,7 @@ defmodule Ps99strat do
   # 2.85714 -> 2.86
   def pretty_print(number) do
     {mant, exp} = break_down(number)
-    pretty_print(number, mant, exp) |> IO.iodata_to_binary
+    pretty_print(number, mant, exp) |> IO.iodata_to_binary()
   end
 
   defp pretty_print(_, mant, 12), do: :io_lib.format("~.2fq", [mant])
@@ -24,6 +24,6 @@ defmodule Ps99strat do
   defp break_down(number) do
     mag = :math.ceil(Math.log10(number)) - 1
     exp = :math.floor(mag / 3) * 3
-    { number / Math.pow(10, exp), trunc(exp) }
+    {number / Math.pow(10, exp), trunc(exp)}
   end
 end
