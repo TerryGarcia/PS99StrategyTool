@@ -56,17 +56,19 @@
     <%= @inner_content %>
   </div>
 </main>
-<footer class="bg-white rounded-lg m-4 dark:bg-gray-800">
-  <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-      © <%= DateTime.utc_now().year %> PS99 Strategy Tool. All Rights Reserved.
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-      <li>
-        <a href="https://github.com/TerryGarcia/PS99StrategyTool" class="hover:underline">
-          Source Code
-        </a>
-      </li>
-    </ul>
-  </div>
+<footer class="bg-white rounded-lg m-4 dark:bg-gray-800 w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+  <p class="md:flex gap-1.5 items-center">
+    Made with ❤️ using
+    <a href="https://elixir-lang.org" class="md:flex gap-1.5 items-center hover:underline">
+      <img class="h-7" src="https://raw.githubusercontent.com/elixir-lang/elixir-lang.github.com/main/downloads/logos/elixir-drop-only.png" />
+      Elixir
+    </a> and
+    <a href="https://www.phoenixframework.org" class="md:flex gap-1.5 items-center hover:underline">
+      <img class="h-7" src="https://raw.githubusercontent.com/phoenixframework/phoenix/main/logo.png" />
+      Phoenix LiveView
+    </a>
+  </p>
+  <a href="https://github.com/TerryGarcia/PS99StrategyTool" class="hover:underline">
+    Source Code
+  </a>
 </footer>
