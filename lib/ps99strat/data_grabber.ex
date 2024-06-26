@@ -1,7 +1,6 @@
 defmodule Ps99strat.DataGrabber do
   use GenServer
 
-
   ############################
   # External API
   def start_link(inital_state) do
@@ -11,7 +10,6 @@ defmodule Ps99strat.DataGrabber do
   def data do
     GenServer.call(__MODULE__, :get_state)
   end
-
 
   ############################
   # GenServer Implementation
@@ -25,12 +23,12 @@ defmodule Ps99strat.DataGrabber do
   end
 
   def handle_call(:get_state, _, state) do
-    { :reply, state, state }
+    {:reply, state, state}
   end
 
   defp get_data do
     Req.get!("https://ps99rap.com/api/get/items").body["data"]
-    |> Task.async_stream(&(%{&1["id"] => &1}))
+    |> Task.async_stream(&%{&1["id"] => &1})
     |> Stream.map(fn {:ok, map} -> map end)
     |> Enum.reduce(&Map.merge/2)
   end
